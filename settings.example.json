@@ -1,0 +1,9 @@
+{
+  "wolvenkit_cli": "C:\\path\\to\\WolvenKit.CLI.exe",
+  "blender": "C:\\path\\to\\blender.exe",
+  "game_root": "C:\\path\\to\\Cyberpunk 2077",
+  "npv_root": "",
+  "output_root": "C:\\path\\to\\V-Exports",
+  "render_proofs": true,
+  "entity_overrides": {}
+}

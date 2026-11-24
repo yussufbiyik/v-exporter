@@ -1,0 +1,74 @@
+# Local configuration (contains absolute paths and personal settings)
+settings.json
+settings.json.*
+!settings.example.json
+
+# Runtime output and logs (may contain paths, NPV names, character data)
+v_exporter.log*
+*.log
+exports/
+work/
+proof_*.png
+textures/
+*_textures/
+export-summary.json
+
+# Exported model and texture artifacts (use force-add only for deliberate samples)
+*.glb
+*.fbx
+*.obj
+*.mtl
+*.blend
+*.blend1
+*.blend2
+*.archive
+*.archive.xl
+*.dds
+*.tga
+*.xbm
+
+# Third-party CLI distribution (download per README)
+tools/
+
+# Python bytecode and tool caches
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+build/
+dist/
+*.egg-info/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+!.env.example
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+
+# Windows and macOS metadata
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
