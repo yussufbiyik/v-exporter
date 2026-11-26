@@ -9,8 +9,24 @@ images.
 
 It has a GUI and a full headless CLI. No pip packages are required.
 
+## AI development disclosure
+
+V-Exporter was created using [OpenCode](https://opencode.ai) and AI-generated
+implementation. I provided the requirements and directed the development process,
+while the AI generated the code and made most implementation and architectural
+decisions.
+
+I originally built this tool to solve a problem I encountered while working with
+Cyberpunk 2077 character exports. I could not find an existing tool that met my
+needs, so I am sharing this one with the community.
+
+This repository is an experimental community utility. Its implementation has not
+been independently verified in every supported environment. Please report issues
+and unexpected behavior.
+
 ## Contents
 
+- [AI development disclosure](#ai-development-disclosure)
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
@@ -25,6 +41,9 @@ It has a GUI and a full headless CLI. No pip packages are required.
 - [Privacy and local data](#privacy-and-local-data)
 - [Project layout](#project-layout)
 - [Development notes](#development-notes)
+- [Reporting issues](#reporting-issues)
+- [License](#license)
+- [Credits](#credits)
 
 ## Features
 
@@ -154,6 +173,7 @@ python v_exporter.py --open-output
 | `--json` | Print a machine-readable result on stdout. Logs go to stderr. |
 | `--quiet` | Suppress normal log lines. Warnings and errors still print. |
 | `--verbose` | Print tracebacks for per-NPV failures. |
+| `--version` | Print version and exit. |
 
 For several NPVs with different looks, use `NPV=look1,look2`:
 
@@ -186,6 +206,7 @@ Exit codes:
 - `0`: success
 - `1`: setup or export error
 - `2`: invalid CLI usage
+- `130`: cancelled with Ctrl+C
 
 With `--json`, stdout contains only the JSON result. All logs go to stderr.
 
@@ -342,6 +363,7 @@ V-Exporter/
   v_exporter.log     rolling log
   work/              uncook cache, safe to delete
   exports/           default output folder
+  LICENSE            MIT license
   V-Exporter_banner.png
   EXPORT-RESEARCH.md detailed export pipeline research
   research-notes.md  source and CLI research notes
@@ -356,6 +378,32 @@ V-Exporter/
 - Material repair belongs in `material_remap.py`.
 - Keep user-specific paths, NPV names and character names out of committed files.
 - Run `python v_exporter.py --selftest` and `python -m py_compile *.py` before committing.
+
+## Reporting issues
+
+Bug reports and feature requests are welcome. When reporting:
+
+- Attach `v_exporter.log` (review it first — it may contain absolute paths and
+  character names).
+- Include the output of `python v_exporter.py --selftest`.
+- Mention which WolvenKit CLI, Blender, and add-on versions you used.
+- If the issue involves a specific look or NPV, describe it without including
+  the model files themselves.
+- Do not attach exported models, textures or uncooked game assets to public
+  issues without permission.
+
+File issues on the repository's issue tracker. For questions, use Discussions
+if available.
+
+## License
+
+V-Exporter is licensed under the [MIT License](LICENSE).
+
+The project banner (`V-Exporter_banner.png`) was generated with AI.
+
+This project depends on third-party tools (WolvenKit, Blender, the Cyberpunk
+Blender IO Suite, and Appearance Creator Mod). Each is subject to its own
+license. This project does not distribute or bundle any of them.
 
 ## Credits
 

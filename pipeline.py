@@ -3346,4 +3346,4 @@ def run_selftest(settings: Optional[Settings] = None, logger: object = None) -> 
 
     if owns_logger:
         log.close()
-    return 0
+    return 1 if failures else 0
